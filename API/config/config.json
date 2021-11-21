@@ -1,0 +1,33 @@
+{
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "line-mission",
+    "host": "localhost",
+    "dialect": "postgres",
+    "timezone": "+09:00",
+    "use_env_variable": "postgres://tquubuspdzcqab:591023ee8aa83288453f0c597675711ce9d29cfc02be1e4d49d6fd01a0d1d1b8@ec2-3",
+    "dialectOptions": {
+      "ssl": {
+        " require": true,
+        " rejectUnauthorized": false
+      }
+    }
+  },
+  "test": {
+    "username": "tquubuspdzcqab",
+    "password": "591023ee8aa83288453f0c597675711ce9d29cfc02be1e4d49d6fd01a0d1d1b8",
+    "database": "db08qao02cbtei",
+    "host": "ec2-3-208-157-78.compute-1.amazonaws.com",
+    "dialect": "postgresql",
+    "timezone": "+09:00"
+  },
+  "production": {
+    "username": "tquubuspdzcqab",
+    "password": "591023ee8aa83288453f0c597675711ce9d29cfc02be1e4d49d6fd01a0d1d1b8",
+    "database": "db08qao02cbtei",
+    "host": "ec2-3-208-157-78.compute-1.amazonaws.com",
+    "dialect": "postgresql",
+    "timezone": "+09:00"
+  }
+}
