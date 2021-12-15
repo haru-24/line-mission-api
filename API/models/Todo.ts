@@ -32,7 +32,7 @@ const Todos = sequelize.define(
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
-    user_id: {
+    userId: {
       type: DataTypes.STRING,
     },
     title: {
@@ -46,7 +46,7 @@ const Todos = sequelize.define(
     },
   },
   {
-    underscored: true,
+    underscored: false,
   }
 );
 

@@ -27,7 +27,7 @@ const Todos = sequelize.define("todos", {
         primaryKey: true,
         type: sequelize_1.DataTypes.INTEGER,
     },
-    user_id: {
+    userId: {
         type: sequelize_1.DataTypes.STRING,
     },
     title: {
@@ -40,7 +40,7 @@ const Todos = sequelize.define("todos", {
         type: sequelize_1.DataTypes.BOOLEAN,
     },
 }, {
-    underscored: true,
+    underscored: false,
 });
 Todos.sync({ alter: true });
 exports.default = Todos;

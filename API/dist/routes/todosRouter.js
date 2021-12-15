@@ -7,13 +7,26 @@ const express_1 = __importDefault(require("express"));
 const router = express_1.default.Router();
 const Todo_js_1 = __importDefault(require("../models/Todo.js"));
 router.use(express_1.default.json());
+// todoのデータ取得
 router.get("/", async (req, res) => {
     const get = await Todo_js_1.default.findAll();
     res.send(get);
 });
+// 詳細用データ
+router.get("/detail/:id", async (req, res) => {
+    const get = await Todo_js_1.default.findOne({
+        where: {
+            id: [req.params.id],
+        },
+    })
+        .then((get) => {
+        res.send(get);
+    })
+        .catch((err) => console.log(err));
+});
 router.post("/", async (req, res) => {
     await Todo_js_1.default.create({
-        user_id: req.body.user_id,
+        userId: req.body.userId,
         title: req.body.title,
         description: req.body.description,
         finished: req.body.finished,

@@ -4,14 +4,28 @@ import Todos from "../models/Todo.js";
 
 router.use(express.json());
 
+// todoのデータ取得
 router.get("/", async (req, res) => {
   const get = await Todos.findAll();
   res.send(get);
 });
 
+// 詳細用データ
+router.get("/detail/:id", async (req, res) => {
+  const get = await Todos.findOne({
+    where: {
+      id: [req.params.id],
+    },
+  })
+    .then((get) => {
+      res.send(get);
+    })
+    .catch((err) => console.log(err));
+});
+
 router.post("/", async (req, res) => {
   await Todos.create({
-    user_id: req.body.user_id,
+    userId: req.body.userId,
     title: req.body.title,
     description: req.body.description,
     finished: req.body.finished,
